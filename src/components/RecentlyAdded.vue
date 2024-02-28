@@ -18,9 +18,14 @@ onMounted(() => {
 </script>
 
 <template>
-    <h2>Ajouté récemment</h2>
-    <div  v-for="annoncement in annoncements">
-      <h3>{{ annoncement.title}}</h3>
-      <p v-for="prop in propsToShow" :key="prop">{{ annoncement[prop] }}</p>
+  <h2>Ajouté récemment</h2>
+    <div class="card mb-1" v-for="annoncement in annoncements">
+      <p class="card-header">{{ annoncement.title}}</p>
+      <div class="card-body">
+        <p class="card-text firmName"> {{ annoncement.firmName}}</p>
+        <p class="card-text city"> {{ annoncement.city}}</p>
+        <p class="card-text category"> {{ annoncement.category}}</p>
+
+      </div>
     </div>
 </template>
