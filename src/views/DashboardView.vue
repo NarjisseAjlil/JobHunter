@@ -2,6 +2,7 @@
 // src/views/Dashboard.vue
 import { ref, onMounted } from "vue";
 import { annoncementGetAll } from "../services/annoncement.js";
+import CardApplications from "@/components/CardApplications.vue";
 import RecentlyAdded from "@/components/RecentlyAdded.vue";
 
 const annoncements = ref([]);
@@ -19,5 +20,6 @@ onMounted(() => {
 <template>
   <h1>Dashboard</h1>
   <p>Bienvenue</p>
+  <CardApplications></CardApplications>
   <RecentlyAdded></RecentlyAdded>
 </template>
