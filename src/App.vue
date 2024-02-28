@@ -21,6 +21,5 @@ const userInfo = computed(() => {
 
     </nav>
   </header>
-
   <RouterView />
 </template>
