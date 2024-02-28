@@ -3,6 +3,7 @@ import HomeView from "../views/HomeView.vue";
 import LoginView from "../views/LoginView.vue";
 import DashboardView from "../views/DashboardView.vue";
 import SignUpView from "../views/SignUpView.vue";
+import AnnoncementView from "../views/AnnoncementView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -26,6 +27,11 @@ const router = createRouter({
       path: "/dashboard",
       name: "dashboard",
       component: DashboardView,
+    },
+    {
+      path: "/formAnnoncement",
+      name: "formAnnoncement",
+      component: AnnoncementView,
     },
     {
       path: "/about",

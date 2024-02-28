@@ -4,9 +4,9 @@ import userInstance from "@/services/user.js";
 import { cryptPassword } from "@/services/utils.js";
 
 let form = ref({
-  name: "Qwerty",
-  email: "qwerty@gmail.com",
-  password: "coucou",
+  email: "name@example.com",
+  password: "ceciestunexemple",
+  name: "Name",
 });
 
 let error = ref(null);
@@ -41,42 +41,43 @@ async function createAccount() {
 </script>
 
 <template>
-    <div class="card text-center align-items-center">
-      <h1 class="text-center">Create an account</h1>
+    <div class="col-7 text-center position-absolute top-50 start-50 translate-middle">
+      <p class="h3 text-success">JobHunter</p>
+      <h1>Create an Account</h1>
 
       <p v-if="error">ERREUR !!!!!! :{{ error }}</p>
 
-      <div class="row g-3 align-items-center mb-2">
+      <div class="row mt-5 mb-3 justify-content-center">
         <div class="col-auto">
-          <label class="col-form-label">Name</label>
+          <label class="col-form-label">Name :</label>
         </div>
         <div class="col-auto">
-          <input type="text" class="form-control" v-model="form.name">
-        </div>
-      </div>
-
-      <div class="row g-3 align-items-center mb-2">
-        <div class="col-auto">
-          <label class="col-form-label">Email</label>
-        </div>
-        <div class="col-auto">
-          <input type="text" class="form-control" v-model="form.email">
+          <input type="text" class="form-control"  v-model="form.name">
         </div>
       </div>
 
-      <div class="row g-3 align-items-center mb-2">
+      <div class="row mb-3 justify-content-center">
         <div class="col-auto">
-          <label class="col-form-label">Password</label>
+          <label class="col-form-label">Email :</label>
         </div>
         <div class="col-auto">
-          <input type="password"  class="form-control" v-model="form.password">
+          <input type="text" class="form-control"  v-model="form.email">
         </div>
       </div>
 
-      <p>
-        <button class="btn btn-outline-success" @click="createAccount">Create</button>
-      </p>
-      <p class="text-center">Already have you an account? <a href="/login">Login</a></p>
+      <div class="row mb-3 justify-content-center">
+        <div class="col-auto">
+          <label class="col-form-label">Password :</label>
+        </div>
+        <div class="col-auto">
+          <input type="password"  class="form-control"  v-model="form.password">
+        </div>
+      </div>
+
+      <div class="mb-5 d-grid gap-2 col-6 mx-auto">
+        <button class="btn btn-outline-success " @click="createAccount">Create</button>
+      </div>
+      <p>Already have you an account? <a href="/login" class="link-success">Login</a></p>
     </div>
     
 </template>

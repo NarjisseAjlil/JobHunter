@@ -1,5 +1,10 @@
 body {
-  background-color: #d1d8dd;
+  background-color: #02111B;
+  font-family: Pontano Sans;
+  color: white;
+}
+h1,h2,h3{
+  font-family: Fjalla One ;
 }
 
 .category {
@@ -24,7 +29,9 @@ body {
 }
 
 .card {
+  color: white;
   border-color: #8ab9f1;
+  background-color: #222232;
 }
 
 .firmName {
