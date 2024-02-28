@@ -8,9 +8,9 @@ import { cryptPassword } from "@/services/utils.js";
 import { useStore } from "@/stores/user.js";
 
 let form = ref({
-  email: "narjisse.ajlil@gmail.com",
+  email: "qwerty@gmail.com",
   password: "coucou",
-  name: "Narjisse",
+  name: "Qwerty",
 });
 
 let error = ref(null);
