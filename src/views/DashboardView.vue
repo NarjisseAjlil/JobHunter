@@ -4,6 +4,8 @@ import { ref, onMounted } from "vue";
 import { annoncementGetAll } from "../services/annoncement.js";
 import CardApplications from "@/components/CardApplications.vue";
 import RecentlyAdded from "@/components/RecentlyAdded.vue";
+// import { useStore } from "@/stores/user.js";
+
 
 const annoncements = ref([]);
 
@@ -15,6 +17,9 @@ async function loadData() {
 onMounted(() => {
   loadData();
 });
+
+// useStore().setUser(user.list[0]);
+
 </script>
 
 <template>

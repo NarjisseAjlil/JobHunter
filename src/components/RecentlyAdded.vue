@@ -18,7 +18,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <h2>Ajouté récemment</h2>
+  <h2 class="mt-4">Ajouté récemment</h2>
     <div class="card mb-1" v-for="annoncement in annoncements">
       <p class="card-header">{{ annoncement.title}}</p>
       <div class="card-body">

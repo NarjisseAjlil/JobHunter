@@ -10,30 +10,13 @@ import { useStore } from "@/stores/user.js";
 let form = ref({
   email: "qwerty@gmail.com",
   password: "coucou",
-  name: "Qwerty",
 });
 
 let error = ref(null);
 let success = ref(null);
 
-async function createAccount() {
-  console.clear();
-  console.log(form.value);
-  error.value = null;
-  success.value = null;
-
-  let user = await userInstance.exists(form.value.email);
-  if (user.list.length > 0) {
-    error.value = "User exists";
-    return false;
-  }
-
-  let data = await userInstance.create(
-    form.value.email,
-    cryptPassword(form.value.password),
-    form.value.name
-  );
-  success.value = "User created";
+function redirectToAnotherPage() {
+  window.location.href = '/dashboard';
 }
 
 async function login() {
@@ -52,6 +35,8 @@ async function login() {
   useStore().setUser(user.list[0]);
 
   success.value = "Bonjour" + user.list[0].name;
+
+  redirectToAnotherPage();
 }
 
 async function logout() {
@@ -60,18 +45,35 @@ async function logout() {
 </script>
 
 <template>
-  <h1>Login</h1>
+  <div class="card text-center align-items-center">
+    <h1 class="text-center">Login</h1>
 
-  <p v-if="error">ERREUR !!!!!! :{{ error }}</p>
-  <p v-if="success">SUCESS !!!!!! :{{ success }}</p>
+    <p v-if="error">ERREUR !!!!!! :{{ error }}</p>
 
-  <p>email<input type="text" v-model="form.email" /></p>
-  <p>Password<input type="Password" v-model="form.password" /></p>
-  <p>Name<input type="text" v-model="form.name" /></p>
+    <div class="row g-3 align-items-center mb-2">
+      <div class="col-auto">
+        <label class="col-form-label">Email</label>
+      </div>
+      <div class="col-auto">
+        <input type="text" class="form-control" v-model="form.email">
+      </div>
+    </div>
 
-  <p>
-    <button @click="createAccount">Create</button>
-    <button @click="login">Login</button>
-    <button @click="logout">Logout</button>
-  </p>
+    <div class="row g-3 align-items-center mb-2">
+      <div class="col-auto">
+        <label class="col-form-label">Password</label>
+      </div>
+      <div class="col-auto">
+        <input type="password"  class="form-control" v-model="form.password">
+      </div>
+    </div>
+
+    <p>
+      <button class="btn btn-outline-success" @click="login">Login</button>
+      <button class="btn btn-outline-success" @click="logout">Logout</button>
+
+    </p>
+    <p class="">Don’t have an account ?<a href="/sign-up">Sign-up</a></p>
+  </div>
+  
 </template>
