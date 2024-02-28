@@ -1,13 +1,13 @@
 <script setup>
 // src/views/HomeView.vue
 import { ref, onMounted } from "vue";
-import { websiteGetAll } from "../services/website.js";
+import { annoncementGetAll } from "../services/annoncement.js";
 
-const websites = ref([]);
+const annoncements = ref([]);
 
 async function loadData() {
-  let data = await websiteGetAll();
-  websites.value = data.list;
+  let data = await annoncementGetAll();
+  annoncements.value = data.list;
 }
 
 onMounted(() => {
@@ -17,5 +17,5 @@ onMounted(() => {
 
 <template>
   <h1>Dashboard</h1>
-  {{ websites }}
+  {{ annoncements }}
 </template>
