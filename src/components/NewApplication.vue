@@ -1,52 +1,48 @@
-<!-- src/components/NewApplication.vue -->
-
 <script setup>
-import { ref, onMounted } from "vue";
-import { annoncementGetAll } from "../services/annoncement.js";
+// src/views/NewApplication.vue
 
-const annoncements = ref([]);
+import { ref } from "vue";
+import newApplicationInstance from "@/services/applications.js";
 
-async function loadData() {
-  let data = await annoncementGetAll();
-  annoncements.value = data.list;
-}
-
-onMounted(() => {
-  loadData();
+let addApplication = ref({
+  title: "qwerty@gmail.com",
+  duration: "coucou",
+  statut: "En attente",
+  img: "Narjisse",
+  firmName: "OpenAI",
+  city: "Shanghai",
+  category: "Sur site, Stage",
 });
+
+let success = ref(null);
+
+async function createApplication() {
+  let data = await newApplicationInstance.create(
+    newApplication.value.title,
+    newApplication.value.duration,
+    newApplication.value.statut,
+    newApplication.value.title,
+    newApplication.value.img,
+    newApplication.value.firmName,
+    newApplication.value.city,
+    newApplication.value.category
+  );
+  success.value = "Candidature ajoutée !";
+}
 </script>
 
 <template>
+  <h1>Ajouter une candidature</h1>
   <form>
     <div class="mb-3">
-      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <label for="exampleInputEmail1" class="form-label">Titre</label>
       <input
-        type="email"
+        type="text"
         class="form-control"
         id="exampleInputEmail1"
         aria-describedby="emailHelp"
+        v-model="addApplication.title"
       />
-      <div id="emailHelp" class="form-text">
-        We'll never share your email with anyone else.
-      </div>
     </div>
-    <div class="mb-3">
-      <label for="exampleInputPassword1" class="form-label">Password</label>
-      <input type="password" class="form-control" id="exampleInputPassword1" />
-    </div>
-    <div class="mb-3 form-check">
-      <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-      <label class="form-check-label" for="exampleCheck1">Check me out</label>
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
   </form>
-  <!-- <div class="candidatures">
-    <div v-for="annoncement in annoncements">
-      <div class="card">
-        <div class="card-body">
-          <img v-if="annoncement.img" :src="annoncement.img[0].signedUrl" />
-        </div>
-      </div>
-    </div>
-  </div> -->
 </template>

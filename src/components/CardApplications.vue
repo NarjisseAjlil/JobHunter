@@ -3,7 +3,6 @@
 <script setup>
 import { ref, onMounted } from "vue";
 import { newApplicationGetAll } from "../services/applications.js";
-
 import { RouterLink } from "vue-router";
 
 const newApplication = ref([]);
@@ -20,7 +19,7 @@ onMounted(() => {
 
 <template>
   <div class="candidatures">
-    <RouterLink to="/applications">Candidatures</RouterLink>
+    <RouterLink to="/applications">Voir tout</RouterLink>
 
     <div v-for="newApplication in newApplication">
       <div class="card">

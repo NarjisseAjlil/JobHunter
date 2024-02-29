@@ -18,6 +18,9 @@ onMounted(() => {
 
 <template>
   <div class="all-applications">
+    <RouterLink to="/add-application"
+      ><i class="bi bi-plus-circle-fill"></i
+    ></RouterLink>
     <div v-for="newApplication in newApplication">
       <div class="card">
         <div class="card-body">
