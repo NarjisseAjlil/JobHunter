@@ -6,21 +6,20 @@ import { annoncementGetAll } from "../services/annoncement.js";
 
 import CardApplications from "@/components/CardApplications.vue";
 import RecentlyAdded from "@/components/RecentlyAdded.vue";
-// import { useStore } from "@/stores/user.js";
 
 
 const annoncements = ref([]);
 
 async function loadData() {
-  let data = await annoncementGetAll();
-  annoncements.value = data.list;
-}
+  let dataAnnoncement = await annoncementGetAll();
+  annoncements.value = dataAnnoncement.list;
+  let dataApplication = await newApplicationGetAll();
+  newApplicationGetAll.value = dataApplication.list;
+};
 
 onMounted(() => {
   loadData();
 });
-
-// useStore().setUser(user.list[0]);
 
 </script>
 

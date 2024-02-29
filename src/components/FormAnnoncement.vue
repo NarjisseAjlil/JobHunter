@@ -10,10 +10,7 @@ let form = ref({
   salary: "",
   firmName: "",
   city: "",
-  alternance: false,
-  stage: false,
-  teletravail: false,
-  surSite: false,
+  // categories: ["Stage","Sur site"],
   logo: "",
 });
 
@@ -29,18 +26,17 @@ async function createAnnoncement() {
     form.value.salary,
     form.value.firmName,
     form.value.city,
-    form.value.categories,
+    // form.value.categories,
     form.value.logo,
   );
-
   success.value = "Annoncement created";
 
 }
 
 </script>
 <template>
-  <p v-if="success">SUCESS !!!!!! :{{ success }}</p>
   <div class="col-9 position-absolute top-50 start-50 translate-middle">
+    <p v-if="success">SUCESS !!!!!! :{{ success }}</p>
     <div class="mb-3">
       <label class="form-label">Title</label>
       <input type="text" class="form-control" v-model="form.title">
@@ -68,35 +64,19 @@ async function createAnnoncement() {
       </div>
     </div>
 
-    <div class="row">
-      <div class="col">
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="Alternance" id="categories" v-model="form.alternance">
-          <label class="form-check-label" for="flexCheckAlternance">Alternance</label>
-        </div>
-
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="Stage" id="categories" v-model="form.stage">
-          <label class="form-check-label" for="flexCheckStage">Stage</label>
-        </div>
-      </div>
-
-      <div class="col">
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="Télétravail" id="categories" v-model="form.teletravail">
-          <label class="form-check-label" for="flexCheckTeletravail">Télétravail</label>
-        </div>
-
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="Sur site" id="categories" v-model="form.surSite">
-          <label class="form-check-label" for="flexCheckSurSite">Sur site</label>
-        </div>
-      </div>
-    </div>
+    <!-- <div class="mb-3">
+      <label class="form-label">Categories</label>
+      <select class="form-select" v-model="form.categories" multiple>
+        <option value="Alternance">Alternance</option>
+        <option value="Stage">Stage</option>
+        <option value="Télétravail">Télétravail</option>
+        <option value="Sur site">Sur site</option>
+      </select>
+    </div> -->
 
     <div class="mb-3">
       <label for="formFile" class="form-label">Logo</label>
-      <input class="form-control" type="file" id="formFile" >
+      <input class="form-control" type="file" id="formFile">
     </div>
 
     <div class="mb-5 d-grid gap-2 col-6 mx-auto">
