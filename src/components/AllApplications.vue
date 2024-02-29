@@ -17,7 +17,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="candidatures">
+  <div class="all-applications">
     <div v-for="annoncement in annoncements">
       <div class="card">
         <div class="card-body">
