@@ -7,26 +7,34 @@ h1,h2,h3{
   font-family: Fjalla One ;
 }
 
-.category {
-  color: black;
-}
+  .category {
+    color: black;
+  }
 
-.statut {
-  color: white;
-  background-color: #8ab9f1;
-  opacity: 0.7;
-  border-radius: 5px;
-  padding: 5px;
-  margin: 5px;
-}
+  .duration {
+    text-decoration: none;
+  }
+  .statut {
+    margin-left: 32px;
+    color: white;
+    background-color: #8ab9f1;
+    opacity: 0.7;
+    border-radius: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-decoration: none;
+  }
 
-.city {
-  color: white;
-  background-color: #02111b;
-  border-radius: 8px;
-  padding: 5px;
-  margin: 5px;
-}
+  .city {
+    color: white;
+    background-color: #02111b;
+    border-radius: 8px;
+    padding: 2px 30px;
+    margin: 5px;
+    display: inline-block;
+  }
 
 .card {
   color: white;
@@ -34,6 +42,7 @@ h1,h2,h3{
   background-color: #222232;
 }
 
-.firmName {
-  color: #0d986a;
+  .firmName {
+    color: #0d986a;
+  }
 }

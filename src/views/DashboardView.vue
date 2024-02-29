@@ -1,7 +1,9 @@
 <script setup>
 // src/views/Dashboard.vue
 import { ref, onMounted } from "vue";
+import { newApplicationGetAll } from "../services/applications.js";
 import { annoncementGetAll } from "../services/annoncement.js";
+
 import CardApplications from "@/components/CardApplications.vue";
 import RecentlyAdded from "@/components/RecentlyAdded.vue";
 // import { useStore } from "@/stores/user.js";

@@ -2,6 +2,8 @@ import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import LoginView from "../views/LoginView.vue";
 import DashboardView from "../views/DashboardView.vue";
+import ApplicationsView from "../views/ApplicationsView.vue";
+import AddApplicationsView from "../views/AddApplicationsView.vue";
 import SignUpView from "../views/SignUpView.vue";
 import AnnoncementView from "../views/AnnoncementView.vue";
 
@@ -27,6 +29,18 @@ const router = createRouter({
       path: "/dashboard",
       name: "dashboard",
       component: DashboardView,
+    },
+
+    {
+      path: "/applications",
+      name: "applications",
+      component: ApplicationsView,
+    },
+
+    {
+      path: "/add-application",
+      name: "Add Application",
+      component: AddApplicationsView,
     },
     {
       path: "/formAnnoncement",
