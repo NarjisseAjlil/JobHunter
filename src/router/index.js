@@ -4,6 +4,8 @@ import LoginView from "../views/LoginView.vue";
 import DashboardView from "../views/DashboardView.vue";
 import ApplicationsView from "../views/ApplicationsView.vue";
 import AddApplicationsView from "../views/AddApplicationsView.vue";
+import SignUpView from "../views/SignUpView.vue";
+import AnnoncementView from "../views/AnnoncementView.vue";
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -12,7 +14,11 @@ const router = createRouter({
       name: "home",
       component: HomeView,
     },
-
+    {
+      path: "/sign-up",
+      name: "sign-up",
+      component: SignUpView,
+    },
     {
       path: "/login",
       name: "login",
@@ -34,6 +40,11 @@ const router = createRouter({
       path: "/add-application",
       name: "Add Application",
       component: AddApplicationsView,
+    },
+    {
+      path: "/formAnnoncement",
+      name: "formAnnoncement",
+      component: AnnoncementView,
     },
     {
       path: "/about",

@@ -1,6 +1,9 @@
+// src/services/website.js
+
 import instance from "./api.js";
 
 export async function annoncementGetAll() {
+  //@todo : gestion fine des erreurs
   const response = await instance.get(`/annoncement/`, {
     params: {
       limit: "150",
@@ -10,4 +13,4 @@ export async function annoncementGetAll() {
   });
 
   return response.data;
-}
+};

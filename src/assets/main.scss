@@ -34,21 +34,22 @@ body {
     text-decoration: none;
   }
 
-  .city {
-    color: white;
-    background-color: #02111b;
-    border-radius: 8px;
-    padding: 2px 30px;
-    margin: 5px;
-    display: inline-block;
-  }
+.city {
+  color: white;
+  background-color: #02111b;
+  border-radius: 8px;
+  padding: 2px 30px;
+  margin: 5px;
+  display: inline-block;
+}
 
-  .card {
-    border-color: #8ab9f1;
-    margin-top: 20px;
-  }
+.card {
+  color: white;
+  border-color: #8ab9f1;
+  margin-top: 20px;
+  background-color: #222232;
+}
 
-  .firmName {
-    color: #0d986a;
-  }
+.firmName {
+  color: #0d986a;
 }

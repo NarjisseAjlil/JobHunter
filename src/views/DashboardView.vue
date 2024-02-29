@@ -5,22 +5,26 @@ import { newApplicationGetAll } from "../services/applications.js";
 import { annoncementGetAll } from "../services/annoncement.js";
 
 import CardApplications from "@/components/CardApplications.vue";
+import RecentlyAdded from "@/components/RecentlyAdded.vue";
+// import { useStore } from "@/stores/user.js";
 
-// const newApplication = ref([]);
+const annoncements = ref([]);
 
-// async function loadData() {
-//   let dataApplications = await newApplicationGetAll();
-//   newApplication.value = dataApplications.list;
+async function loadData() {
+  let data = await annoncementGetAll();
+  annoncements.value = data.list;
+}
 
-//   let dataAnnoncement = await annoncementGetAll();
-//   annoncement.value = dataAnnoncement.list;
-// }
+onMounted(() => {
+  loadData();
+});
 
-// onMounted(() => {
-//   loadData();
-// });
+// useStore().setUser(user.list[0]);
 </script>
 
 <template>
+  <h1>Dashboard</h1>
+  <p>Bienvenue</p>
   <CardApplications></CardApplications>
+  <RecentlyAdded></RecentlyAdded>
 </template>
