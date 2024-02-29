@@ -18,13 +18,14 @@ onMounted(() => {
 
 <template>
   <div class="all-applications">
+    <RouterLink to="/dashboard"
+      ><i class="bi bi-arrow-left-short"></i
+    ></RouterLink>
+
     <RouterLink to="/add-application"
       ><i class="bi bi-plus-circle-fill"></i
     ></RouterLink>
 
-    <RouterLink to="/dashboard"
-      >Retour au dashboard<i class="bi bi-arrow-left-short"></i
-    ></RouterLink>
     <div v-for="newApplication in newApplication">
       <div class="card">
         <div class="card-body">

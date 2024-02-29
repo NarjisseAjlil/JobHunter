@@ -8,7 +8,7 @@ import { RouterLink } from "vue-router";
 const newApplication = ref([]);
 
 async function loadData() {
-  let data = await newApplicationGetAll(2);
+  let data = await newApplicationGetAll(1);
   newApplication.value = data.list;
 }
 
@@ -18,9 +18,8 @@ onMounted(() => {
 </script>
 
 <template>
+  <RouterLink class="see-all" to="/applications">Voir tout</RouterLink>
   <div class="candidatures">
-    <RouterLink to="/applications">Voir tout</RouterLink>
-
     <div v-for="newApplication in newApplication">
       <div class="card">
         <div class="card-body">
