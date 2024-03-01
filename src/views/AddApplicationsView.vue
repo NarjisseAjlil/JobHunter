@@ -1,19 +1,19 @@
 <script setup>
 // src/views/Dashboard.vue
 import { ref, onMounted } from "vue";
-import { annoncementGetAll } from "../services/annoncement.js";
+import { newApplicationGetAll } from "../services/applications.js";
 import NewApplication from "@/components/NewApplication.vue";
 
-const annoncements = ref([]);
+// const newApplication = ref([]);
 
-async function loadData() {
-  let data = await annoncementGetAll();
-  annoncements.value = data.list;
-}
+// async function loadData() {
+//   let data = await newApplicationGetAll();
+//   newApplication.value = data.list;
+// }
 
-onMounted(() => {
-  loadData();
-});
+// onMounted(() => {
+//   loadData();
+// });
 </script>
 
 <template>
