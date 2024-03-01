@@ -18,6 +18,7 @@ onMounted(() => {
 
 <template>
   <h2 class="mt-4">Ajouté récemment</h2>
+  <div class="">
     <div class="card mb-1" v-for="annoncement in annoncements">
       <a class="link-offset-2 link-underline link-underline-opacity-0" :href=" annoncement.url">
         <img
@@ -32,4 +33,5 @@ onMounted(() => {
       </div>
       </a>
     </div>
+  </div>
 </template>

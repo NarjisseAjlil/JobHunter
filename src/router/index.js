@@ -6,6 +6,7 @@ import ApplicationsView from "../views/ApplicationsView.vue";
 import AddApplicationsView from "../views/AddApplicationsView.vue";
 import SignUpView from "../views/SignUpView.vue";
 import AnnoncementView from "../views/AnnoncementView.vue";
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
