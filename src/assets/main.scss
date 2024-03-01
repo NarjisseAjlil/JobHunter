@@ -8,8 +8,11 @@ body {
   .card {
     background-color: #2a272e;
     margin-left: 20px;
-    width: 20rem;
+    margin-top: 10%;
+    width: 25rem;
     height: 15rem;
+    color: white;
+    border-color: #8ab9f1;
   }
 
   .candidatures {
@@ -22,41 +25,68 @@ body {
   }
 
   .category {
-    color: black;
+    margin-left: 90px;
   }
 
+  .duration-statut {
+    position: relative;
+    padding-top: 20px;
+    border-top: 2px solid transparent;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .duration-statut::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #8ab9f1, transparent);
+  }
   .duration {
     text-decoration: none;
   }
+
+  .img-title {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: start;
+  }
+
+  .img-title img {
+    margin-right: 20px;
+  }
+
+  .img-title h5 {
+    margin-top: 10px;
+  }
   .statut {
-    margin-left: 32px;
     color: white;
     background-color: #8ab9f1;
     opacity: 0.7;
+    margin-left: 32px;
     border-radius: 5px;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 2px;
-    padding-bottom: 2px;
+    padding: 2px 20px 2px 20px;
     text-decoration: none;
   }
 
+  .city-category {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+  }
   .city {
     color: white;
     background-color: #02111b;
     border-radius: 8px;
     padding: 2px 30px;
     margin: 5px;
-    display: inline-block;
   }
-
-  .card {
-    color: white;
-    border-color: #8ab9f1;
-    background-color: #222232;
-  }
-
   .firmName {
+    margin-left: 50px;
     color: #0d986a;
   }
 
@@ -64,7 +94,10 @@ body {
     color: white;
   }
 
-  .bi-plus-circle-fill {
+  .bi-plus-circle {
+    display: flex;
+    justify-content: end;
+    text-decoration: none;
     color: white;
   }
 

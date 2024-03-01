@@ -34,24 +34,25 @@ async function createApplication() {
 <template>
   <h1>Ajouter une candidature</h1>
   <form>
-    <div class="form-floating mb-3">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
       <input
         type="email"
         class="form-control"
-        id="floatingInput"
-        placeholder="name@example.com"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
         v-model="addApplication.title"
       />
-      <label for="floatingInput">Email address</label>
+      <div id="emailHelp" class="form-text">
+        We'll never share your email with anyone else.
+      </div>
     </div>
-    <div class="form-floating">
-      <input
-        type="password"
-        class="form-control"
-        id="floatingPassword"
-        placeholder="Password"
-      />
-      <label for="floatingPassword text-danger">Password</label>
-    </div>
+    <form>
+      <div class="form-group">
+        <label for="datepicker">Sélectionner une date :</label>
+        <input type="text" class="form-control" id="datepicker" name="date" />
+      </div>
+      <button type="submit" class="btn btn-primary">Soumettre</button>
+    </form>
   </form>
 </template>

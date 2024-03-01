@@ -17,39 +17,51 @@ onMounted(() => {
 </script>
 
 <template>
+  <h1 class="text-center mt-20">Mes candidatures</h1>
   <div class="all-applications">
     <RouterLink to="/dashboard"
-      ><i class="bi bi-arrow-left-short"></i
+      ><i class="bi bi-arrow-left-short display-1"></i
     ></RouterLink>
 
     <RouterLink to="/add-application"
-      ><i class="bi bi-plus-circle-fill"></i
+      ><i class="bi bi-plus-circle fa-8x"></i
     ></RouterLink>
 
     <div v-for="newApplication in newApplication">
       <div class="card">
         <div class="card-body">
-          <img
-            v-if="newApplication.img"
-            :src="newApplication.img[0].signedUrl"
-          />
+          <!-- Div img + title of the card -->
+          <div class="img-title">
+            <img
+              v-if="newApplication.img"
+              :src="newApplication.img[0].signedUrl"
+            />
 
-          <h5 class="card-title text-white">{{ newApplication.title }}</h5>
+            <h5 class="card-title text-white">{{ newApplication.title }}</h5>
+          </div>
+
+          <!-- Firm name of the card -->
           <h6 class="card-subtitle firmName">
             {{ newApplication.firmName }}
           </h6>
-          <p class="card-text city">
-            {{ newApplication.city }}
-          </p>
 
-          <p class="card-link text-white">{{ newApplication.category }}</p>
+          <!-- Div city + category of the card -->
+          <div class="city-category">
+            <p class="card-text city">
+              {{ newApplication.city }}
+            </p>
+            <p class="card-link text-white">{{ newApplication.category }}</p>
+          </div>
 
-          <a class="card-link text-white duration">
-            {{ newApplication.duration }}</a
-          >
-          <a class="card-text statut">
-            {{ newApplication.statut }}
-          </a>
+          <!-- Div duration + statut of the card -->
+          <div class="duration-statut">
+            <a class="card-link text-white duration">
+              {{ newApplication.duration }}</a
+            >
+            <a class="card-text statut">
+              {{ newApplication.statut }}
+            </a>
+          </div>
         </div>
       </div>
     </div>
