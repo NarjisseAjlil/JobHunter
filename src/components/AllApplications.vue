@@ -21,13 +21,13 @@ onMounted(() => {
 
   <!-- icon link to other pages -->
 
-  <RouterLink to="/dashboard"
-    ><i class="bi bi-arrow-left-short display-1"></i
-  ></RouterLink>
+  <div class="all-applications-cta">
+    <RouterLink to="/dashboard"
+      ><i class="bi bi-arrow-left-short"></i
+    ></RouterLink>
 
-  <RouterLink to="/add-application"
-    ><i class="bi bi-plus-circle fa-8x"></i
-  ></RouterLink>
+    <RouterLink to="/add-application"><i class="bi bi-plus-lg"></i></RouterLink>
+  </div>
 
   <div v-for="newApplication in newApplication">
     <div class="card all-applications">
@@ -43,16 +43,16 @@ onMounted(() => {
         </div>
 
         <!-- Firm name of the card -->
-        <h6 class="card-subtitle firmName">
+        <p class="card-subtitle firmName">
           {{ newApplication.firmName }}
-        </h6>
+        </p>
 
         <!-- Div city + category of the card -->
         <div class="city-category">
           <p class="card-text city">
             {{ newApplication.city }}
           </p>
-          <p class="card-link text-white">{{ newApplication.category }}</p>
+          <li class="card-link text-white">{{ newApplication.category }}</li>
         </div>
 
         <!-- Div duration + statut of the card -->
