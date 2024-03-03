@@ -1,8 +1,8 @@
 <script setup>
-// src/views/NewApplication.vue
-
 import { ref } from "vue";
+import { RouterLink } from "vue-router";
 import newApplicationInstance from "@/services/applications.js";
+import ConfettiGenerator from "canvas-confetti";
 
 let addApplication = ref({
   title: "",
@@ -12,36 +12,52 @@ let addApplication = ref({
   firmName: "",
   city: "",
   category: "",
-
-  methods: {
-    createApplication() {
-      this.success = true;
-      this.error = true;
-    },
-    handleFileUpload(event) {},
-  },
 });
 
 let success = ref(null);
 let error = ref(null);
 
 async function createApplication() {
-  let data = await newApplicationInstance.create(
-    addApplication.value.title,
-    addApplication.value.duration,
-    addApplication.value.statut,
-    addApplication.value.img,
-    addApplication.value.firmName,
-    addApplication.value.city,
-    addApplication.value.category
-  );
-  success.value = "Candidature ajoutée !";
-  error.value = "TES UN GROS CACA !";
+  try {
+    let data = await newApplicationInstance.create(
+      addApplication.value.title,
+      addApplication.value.duration,
+      addApplication.value.statut,
+      addApplication.value.img,
+      addApplication.value.firmName,
+      addApplication.value.city,
+      addApplication.value.category
+    );
+
+    success.value = "Candidature ajoutée !";
+    showConfetti();
+  } catch (err) {
+    error.value = "Échec de l'ajout d'une candidature...";
+  }
+}
+
+function showConfetti() {
+  const confettiSettings = {
+    startVelocity: 30,
+    spread: 360,
+    ticks: 60,
+    zIndex: 2000,
+  };
+  const confettiCanvas = document.getElementById("confettiCanvas");
+  ConfettiGenerator(confettiCanvas, confettiSettings).fire({
+    particleCount: 150,
+    spread: 180,
+    origin: { y: 0.6 },
+  });
+}
+
+function handleFileUpload(event) {
+  // Votre fonction de gestion de téléchargement de fichier
 }
 </script>
 
 <template>
-  <div>
+  <div class="col-9 position-absolute top-50 start-50 translate-middle">
     <div v-if="!success">
       <h1>Ajouter une candidature</h1>
       <!-- create a new application -->
@@ -123,15 +139,29 @@ async function createApplication() {
 
       <div class="mb-5 d-grid gap-2 col-6 mx-auto">
         <button class="btn btn-outline-success" @click="createApplication">
-          Ajouter une candidature
+          Ajouter
         </button>
       </div>
     </div>
 
-    <div v-if="success" class="text-center">
-      <h1>{{ success }}</h1>
-      <RouterLink to="/dashboard">Retour au dashboard</RouterLink>
+    <div v-else class="text-center">
+      <p class="application-success">{{ success }}</p>
+      <canvas
+        id="confettiCanvas"
+        style="
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          pointer-events: none;
+        "
+      ></canvas>
+      <p>
+        <RouterLink class="text-success" to="/dashboard"
+          >Retour au dashboard</RouterLink
+        >
+      </p>
     </div>
-    <div v-if="error"></div>
   </div>
 </template>
