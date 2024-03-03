@@ -12,9 +12,6 @@
     text-align: center;
   }
 
-  .navbar-light .navbar-toggler-icon {
-    color: white;
-  }
   // all application and recent ones
 
   .application-success {
@@ -22,10 +19,6 @@
     font-family: Fjalla One;
   }
 
-  .custom-btn {
-    background-color: #8ec185;
-    color: white;
-  }
   .card {
     background-color: #2a272e;
     margin-left: 20px;
@@ -62,6 +55,12 @@
     font-size: 20px;
   }
 
+  // btn style for btn in add applciation
+  .custom-btn {
+    background-color: #8ec185;
+    color: white;
+  }
+
   // candidatures linear border
 
   .candidatures {
@@ -81,6 +80,7 @@
     background: linear-gradient(to right, transparent, #8ab9f1, transparent);
   }
 
+  // style for logo and title of card in cardApplications.vue and AllApplications.vue
   .img-title {
     display: flex;
     justify-content: start;
@@ -88,7 +88,7 @@
   }
 
   .img-title img {
-    margin-right: 20px;
+    margin-right: 25px;
   }
 
   .img-title h5 {
