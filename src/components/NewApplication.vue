@@ -139,7 +139,10 @@ function handleFileUpload(event) {
 
       <div class="mb-5 d-flex justify-content-center">
         <div class="d-flex flex-grow-1 mx-2">
-          <button class="btn btn-outline-success w-100 custom-btn">
+          <button
+            class="btn btn-outline-success w-100 custom-btn"
+            @click="createApplication"
+          >
             Ajouter
           </button>
         </div>
