@@ -18,11 +18,14 @@ onMounted(() => {
 </script>
 
 <template>
-  <h1>Récentes candidatures</h1>
-  <RouterLink class="see-all" to="/applications">Voir tout</RouterLink>
+  <div class="recent-applications">
+    <p>Candidatures</p>
+    <!-- link to applications -->
+    <RouterLink class="see-all" to="/applications">Voir tout</RouterLink>
+  </div>
   <div class="candidatures">
     <div v-for="newApplication in newApplication">
-      <div class="card">
+      <div class="card applications">
         <div class="card-body">
           <!-- Div img + title of the card -->
           <div class="img-title">
@@ -44,17 +47,19 @@ onMounted(() => {
             <p class="card-text city">
               {{ newApplication.city }}
             </p>
-            <p class="card-link text-white">{{ newApplication.category }}</p>
+            <li class="card-link text-white category">
+              {{ newApplication.category }}
+            </li>
           </div>
 
           <!-- Div duration + statut of the card -->
           <div class="duration-statut">
-            <a class="card-link text-white duration">
-              {{ newApplication.duration }}</a
-            >
-            <a class="card-text statut">
+            <p class="card-text text-white">
+              {{ newApplication.duration }}
+            </p>
+            <p class="card-link statut">
               {{ newApplication.statut }}
-            </a>
+            </p>
           </div>
         </div>
       </div>

@@ -18,50 +18,51 @@ onMounted(() => {
 
 <template>
   <h1 class="text-center mt-20">Mes candidatures</h1>
-  <div class="all-applications">
-    <RouterLink to="/dashboard"
-      ><i class="bi bi-arrow-left-short display-1"></i
-    ></RouterLink>
 
-    <RouterLink to="/add-application"
-      ><i class="bi bi-plus-circle fa-8x"></i
-    ></RouterLink>
+  <!-- icon link to other pages -->
 
-    <div v-for="newApplication in newApplication">
-      <div class="card">
-        <div class="card-body">
-          <!-- Div img + title of the card -->
-          <div class="img-title">
-            <img
-              v-if="newApplication.img"
-              :src="newApplication.img[0].signedUrl"
-            />
+  <RouterLink to="/dashboard"
+    ><i class="bi bi-arrow-left-short display-1"></i
+  ></RouterLink>
 
-            <h5 class="card-title text-white">{{ newApplication.title }}</h5>
-          </div>
+  <RouterLink to="/add-application"
+    ><i class="bi bi-plus-circle fa-8x"></i
+  ></RouterLink>
 
-          <!-- Firm name of the card -->
-          <h6 class="card-subtitle firmName">
-            {{ newApplication.firmName }}
-          </h6>
+  <div v-for="newApplication in newApplication">
+    <div class="card all-applications">
+      <div class="card-body">
+        <!-- Div img + title of the card -->
+        <div class="img-title">
+          <img
+            v-if="newApplication.img"
+            :src="newApplication.img[0].signedUrl"
+          />
 
-          <!-- Div city + category of the card -->
-          <div class="city-category">
-            <p class="card-text city">
-              {{ newApplication.city }}
-            </p>
-            <p class="card-link text-white">{{ newApplication.category }}</p>
-          </div>
+          <h5 class="card-title text-white">{{ newApplication.title }}</h5>
+        </div>
 
-          <!-- Div duration + statut of the card -->
-          <div class="duration-statut">
-            <a class="card-link text-white duration">
-              {{ newApplication.duration }}</a
-            >
-            <a class="card-text statut">
-              {{ newApplication.statut }}
-            </a>
-          </div>
+        <!-- Firm name of the card -->
+        <h6 class="card-subtitle firmName">
+          {{ newApplication.firmName }}
+        </h6>
+
+        <!-- Div city + category of the card -->
+        <div class="city-category">
+          <p class="card-text city">
+            {{ newApplication.city }}
+          </p>
+          <p class="card-link text-white">{{ newApplication.category }}</p>
+        </div>
+
+        <!-- Div duration + statut of the card -->
+        <div class="duration-statut">
+          <p class="card-text text-white duration">
+            {{ newApplication.duration }}
+          </p>
+          <p class="card-link statut">
+            {{ newApplication.statut }}
+          </p>
         </div>
       </div>
     </div>

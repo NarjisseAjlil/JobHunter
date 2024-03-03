@@ -16,12 +16,14 @@ let addApplication = ref({
   methods: {
     createApplication() {
       this.success = true;
+      this.error = true;
     },
     handleFileUpload(event) {},
   },
 });
 
 let success = ref(null);
+let error = ref(null);
 
 async function createApplication() {
   let data = await newApplicationInstance.create(
@@ -34,6 +36,7 @@ async function createApplication() {
     addApplication.value.category
   );
   success.value = "Candidature ajoutée !";
+  error.value = "TES UN GROS CACA !";
 }
 </script>
 
@@ -41,6 +44,7 @@ async function createApplication() {
   <div>
     <div v-if="!success">
       <h1>Ajouter une candidature</h1>
+      <!-- create a new application -->
 
       <div class="mb-3">
         <label for="title" class="form-label">Titre</label>
@@ -128,5 +132,6 @@ async function createApplication() {
       <h1>{{ success }}</h1>
       <RouterLink to="/dashboard">Retour au dashboard</RouterLink>
     </div>
+    <div v-if="error"></div>
   </div>
 </template>
