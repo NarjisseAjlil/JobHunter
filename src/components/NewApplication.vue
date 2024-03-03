@@ -36,7 +36,7 @@ async function createApplication() {
     addApplication.value.category
   );
   success.value = "Candidature ajoutée !";
-  error.value = "TES UN GROS CACA !";
+  error.value = "fail !";
 }
 </script>
 
