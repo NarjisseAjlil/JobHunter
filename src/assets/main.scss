@@ -12,8 +12,15 @@
     text-align: center;
   }
 
+  .navbar-light .navbar-toggler-icon {
+    color: white;
+  }
   // all application and recent ones
 
+  .application-success {
+    font-size: 35px;
+    font-family: Fjalla One;
+  }
   .card {
     background-color: #2a272e;
     margin-left: 20px;
@@ -172,12 +179,17 @@
   // icons
   .bi-arrow-left-short {
     color: white;
+    font-size: 30px;
   }
 
-  .bi-plus-circle {
-    display: flex;
-    justify-content: end;
+  .bi-plus-lg {
     text-decoration: none;
     color: white;
+    font-size: 25px;
+  }
+
+  .all-applications-cta {
+    display: flex;
+    justify-content: space-between;
   }
 }
