@@ -137,10 +137,18 @@ function handleFileUpload(event) {
         </select>
       </div>
 
-      <div class="mb-5 d-grid gap-2 col-6 mx-auto">
-        <button class="btn btn-outline-success" @click="createApplication">
-          Ajouter
-        </button>
+      <div class="mb-5 d-flex justify-content-center">
+        <div class="d-flex flex-grow-1 mx-2">
+          <button class="btn btn-outline-success w-100 custom-btn">
+            Ajouter
+          </button>
+        </div>
+
+        <div class="d-flex flex-grow-1 mx-2">
+          <button class="btn btn-outline-success w-100">
+            Retour au dashboard
+          </button>
+        </div>
       </div>
     </div>
 
