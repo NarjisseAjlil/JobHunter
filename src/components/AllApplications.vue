@@ -17,7 +17,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <h1 class="text-center mt-20">Mes candidatures</h1>
+  <h1 class="text-center mt-5">Mes candidatures</h1>
 
   <!-- icon link to other pages -->
 

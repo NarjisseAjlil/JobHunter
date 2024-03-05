@@ -11,7 +11,7 @@ const annoncements = ref([]);
 
 const userInfo = computed(() => {
   return useStore().getUser;
-})
+});
 
 async function loadData() {
   let dataAnnoncement = await annoncementGetAll();
@@ -27,7 +27,6 @@ onMounted(() => {
 
 <template>
   <div class="added-text">
-    <p class="h2 mb-4 text-success">JobHunter</p>
     <p>Bienvenue</p>
     <h3 class="mb-5">{{ userInfo.name }}</h3>
   </div>
