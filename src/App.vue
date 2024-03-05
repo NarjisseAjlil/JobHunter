@@ -96,22 +96,29 @@ import { computed } from "vue";
                   >
                 </a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <RouterLink
+                    class="text-decoration-none text-white"
+                    to="/profile"
+                    >Profile</RouterLink
+                  >
+                </a>
+              </li>
             </ul>
           </div>
         </div>
       </div>
     </nav>
-    <!-- <RouterLink to="/">Home</RouterLink>
+    <!--<nav>
+     <RouterLink to="/">Home</RouterLink>
       <RouterLink to="/about">About</RouterLink>
       <RouterLink to="/sign-up">Sign-up</RouterLink>
       <RouterLink to="/login">Login</RouterLink>
       <RouterLink to="/dashboard">Dashboard</RouterLink>
       <RouterLink to="/formAnnoncement">Annonces</RouterLink>
       <RouterLink to="/profile">Profile</RouterLink>
-
-
-
-    </nav>
+    </nav> -->
   </header>
   <RouterView />
 </template>
