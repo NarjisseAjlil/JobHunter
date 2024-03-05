@@ -15,8 +15,10 @@ let form = ref({
 let error = ref(null);
 let success = ref(null);
 
+import router from '@/router'; 
+
 function redirectToAnotherPage() {
-  window.location.href = '/dashboard';
+  router.push( '/dashboard');
 }
 
 async function login() {
@@ -31,7 +33,6 @@ async function login() {
     error.value = "User non trouvé";
     return false;
   }
-
   useStore().setUser(user.list[0]);
 
   success.value = "Bonjour" + user.list[0].name;

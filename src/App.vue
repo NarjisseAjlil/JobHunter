@@ -4,9 +4,9 @@ import { RouterLink, RouterView } from "vue-router";
 
 import { useStore } from "./stores/user";
 import { computed } from "vue";
-const userInfo = computed(() => {
-  return useStore().getUser;
-});
+// const userInfo = computed(() => {
+//   return useStore().getUser;
+// });
 </script>
 
 <template>
@@ -15,10 +15,11 @@ const userInfo = computed(() => {
       <RouterLink to="/">Home</RouterLink>
       <RouterLink to="/about">About</RouterLink>
       <RouterLink to="/sign-up">Sign-up</RouterLink>
-      <RouterLink v-if="userInfo == null" to="/login">Login</RouterLink>
-      <span v-else>{{ userInfo.name }}</span>
+      <RouterLink to="/login">Login</RouterLink>
       <RouterLink to="/dashboard">Dashboard</RouterLink>
       <RouterLink to="/formAnnoncement">Annonces</RouterLink>
+      <RouterLink to="/profile">Profile</RouterLink>
+
 
 
     </nav>

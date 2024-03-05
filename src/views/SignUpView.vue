@@ -12,8 +12,10 @@ let form = ref({
 let error = ref(null);
 let success = ref(null);
 
+import router from '@/router'; 
+
 function redirectToAnotherPage() {
-  window.location.href = '/dashboard';
+  router.push( '/login');
 }
 
 async function createAccount() {
