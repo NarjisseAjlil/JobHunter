@@ -10,9 +10,10 @@ import { computed } from "vue";
 </script>
 
 <template>
-  <header>
+  <header class="mt-2">
     <nav class="navbar navbar-light">
       <div class="container-fluid">
+        <p class="h2 mt-2 text-success">JobHunter</p>
         <button
           class="navbar-toggler ms-auto"
           type="button"
@@ -30,7 +31,10 @@ import { computed } from "vue";
           aria-labelledby="offcanvasDarkNavbarLabel"
         >
           <div class="offcanvas-header">
-            <p class="h2 text-success offcanvas-title" id="jobHunterNavbarLabel">
+            <p
+              class="h2 text-success offcanvas-title"
+              id="jobHunterNavbarLabel"
+            >
               JobHunter
             </p>
             <button
@@ -45,26 +49,17 @@ import { computed } from "vue";
               <li class="nav-item">
                 <a class="nav-link"
                   ><RouterLink class="text-decoration-none text-white" to="/"
-                    >Home</RouterLink
+                    >Accueil</RouterLink
                   ></a
                 >
               </li>
 
               <li class="nav-item">
-                <a class="nav-link"
-                  ><RouterLink
-                    class="text-decoration-none text-white"
-                    to="/about"
-                    >About</RouterLink
-                  ></a
-                >
-              </li>
-              <li class="nav-item">
                 <a class="nav-link" href="#">
                   <RouterLink
                     class="text-decoration-none text-white"
                     to="/sign-up"
-                    >Sign-up</RouterLink
+                    >Inscription</RouterLink
                   ></a
                 >
               </li>
@@ -73,7 +68,7 @@ import { computed } from "vue";
                   <RouterLink
                     class="text-decoration-none text-white"
                     to="/login"
-                    >Login</RouterLink
+                    >Connexion</RouterLink
                   ></a
                 >
               </li>
@@ -100,7 +95,7 @@ import { computed } from "vue";
                   <RouterLink
                     class="text-decoration-none text-white"
                     to="/profile"
-                    >Profile</RouterLink
+                    >Profil</RouterLink
                   >
                 </a>
               </li>
