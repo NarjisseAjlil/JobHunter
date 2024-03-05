@@ -17,7 +17,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <p class="mt-5 recently-added-text">Ajouté récemment</p>
+  <p class="mt-5 added-text">Ajouté récemment</p>
 
   <div>
     <div class="annoncement mb-1" v-for="annoncement in annoncements">

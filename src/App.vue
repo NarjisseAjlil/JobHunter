@@ -30,9 +30,9 @@ import { computed } from "vue";
           aria-labelledby="offcanvasDarkNavbarLabel"
         >
           <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">
-              Dark offcanvas
-            </h5>
+            <p class="h2 text-success offcanvas-title" id="jobHunterNavbarLabel">
+              JobHunter
+            </p>
             <button
               type="button"
               class="btn-close btn-close-white"
@@ -71,7 +71,6 @@ import { computed } from "vue";
               <li class="nav-item">
                 <a class="nav-link" href="#">
                   <RouterLink
-                    v-if="userInfo == null"
                     class="text-decoration-none text-white"
                     to="/login"
                     >Login</RouterLink

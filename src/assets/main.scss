@@ -9,7 +9,9 @@
   h2,
   h3 {
     font-family: Fjalla One;
-    text-align: center;
+  }
+  h1{
+    font-size: 30px;
   }
 
   // all application and recent ones
@@ -142,9 +144,9 @@
 
   // annoncement
 
-  .recently-added-text {
+  .added-text {
     margin-left: 20px;
-    font-size: 22px;
+    font-size: 20px;
   }
 
   .annoncement {
@@ -196,5 +198,14 @@
   .all-applications-cta {
     display: flex;
     justify-content: space-between;
+  }
+
+  //home
+  .all {
+    padding: 30px;
+    width: 27rem;
+    height: 16rem;
+    color: white;
+    background-color: #8ab9f1;
   }
 }

@@ -2,6 +2,8 @@
 import { ref, computed } from "vue";
 import { useStore } from "@/stores/user.js";
 import cvInstance from "@/services/cv.js";
+import ConfettiGenerator from "canvas-confetti";
+
 
 const userInfo = computed(() => {
   return useStore().getUser;
@@ -22,19 +24,33 @@ function redirectToAnotherPage() {
 }
 
 async function update() {
-  success.value = null;
-
   try {
     await cvInstance.create(
       form.value.cv,
       form.value.coverLetter,
       userInfo.value.id
     );
-    success.value = "Created";
+    success.value = "Candidature ajoutée !";
+    showConfetti();
   } catch (error) {
     console.error("Erreur lors de la mise à jour du CV :", error);
     // Gérer l'erreur de manière appropriée
   }
+}
+
+function showConfetti() {
+  const confettiSettings = {
+    startVelocity: 30,
+    spread: 360,
+    ticks: 60,
+    zIndex: 2000,
+  };
+  const confettiCanvas = document.getElementById("confettiCanvas");
+  ConfettiGenerator(confettiCanvas, confettiSettings).fire({
+    particleCount: 150,
+    spread: 180,
+    origin: { y: 0.6 },
+  });
 }
 
 async function logout() {

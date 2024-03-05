@@ -46,13 +46,12 @@ async function logout() {
 </script>
 
 <template>
-  <div class="col-7 text-center position-absolute top-50 start-50 translate-middle">
-    <p class="h3 text-success">JobHunter</p>
-    <h1>Welcome Back</h1>
-
+      <p class="h3 mt-5 mb-3 text-center text-success">JobHunter</p>
+    <h1 class=" text-center">Welcome Back</h1>
+  <div class="col-7 position-absolute top-50 start-50 translate-middle">
     <p v-if="error">ERREUR !!!!!! :{{ error }}</p>
 
-    <div class="row mt-5 mb-3 justify-content-center">
+    <div class="mt-5 mb-3 justify-content-center">
       <div class="col-auto">
         <label class="col-form-label">Email :</label>
       </div>
@@ -61,7 +60,7 @@ async function logout() {
       </div>
     </div>
 
-    <div class="row mb-3 justify-content-center">
+    <div class="mb-3 justify-content-center">
       <div class="col-auto">
         <label class="col-form-label">Password :</label>
       </div>
@@ -70,12 +69,10 @@ async function logout() {
       </div>
     </div>
 
-    <p class="d-grid gap-2 col-6 mx-auto">
+    <p class="mt-4 d-grid col-9 mx-auto">
       <button class="btn btn-outline-success" @click="login">Login</button>
-      <button class="btn btn-outline-success" @click="logout">Logout</button>
-
     </p>
-    <p class="mt-5"> Don’t have an account ? 
+    <p class="mt-5 text-center"> Don’t have an account ? 
       <a href="/sign-up" class="link-success"> Sign-up</a></p>
   </div>
   
