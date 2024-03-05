@@ -7,7 +7,6 @@ import { useStore } from "@/stores/user";
 import CardApplications from "@/components/CardApplications.vue";
 import RecentlyAdded from "@/components/RecentlyAdded.vue";
 
-
 const annoncements = ref([]);
 
 const userInfo = computed(() => {
@@ -19,12 +18,11 @@ async function loadData() {
   annoncements.value = dataAnnoncement.list;
   let dataApplication = await newApplicationGetAll();
   newApplicationGetAll.value = dataApplication.list;
-};
+}
 
 onMounted(() => {
   loadData();
 });
-
 </script>
 
 <template>

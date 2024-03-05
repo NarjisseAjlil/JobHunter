@@ -15,14 +15,18 @@ export async function newApplicationGetAll(limit = 100) {
 }
 
 class Application {
-  async create(title, url, duration, salary, firmName, city) {
+  async create(title, duration, statut, img, firmName, city, category) {
+    console.clear();
+    console.log(title, duration, statut, img, firmName, city, category);
+
     const response = await instance.post(`/newApplication/`, {
       title: title,
-      url: url,
       duration: duration,
-      salary: salary,
+      statut: statut,
+      img: img,
       firmName: firmName,
       city: city,
+      category: category,
     });
     return response.data;
   }
