@@ -8,14 +8,12 @@ import ConfettiGenerator from "canvas-confetti";
 const userInfo = computed(() => {
   return useStore().getUser;
 });
+const user_id = userInfo.value.id;
 
 let form = ref({
   cv: "cv",
   coverLetter: "coverLetter",
-  userId:userInfo.value.id,
 });
-
-let success = ref(null);
 
 import router from "@/router";
 
@@ -24,17 +22,16 @@ function redirectToAnotherPage() {
 }
 
 async function update() {
+
   try {
     await cvInstance.create(
       form.value.cv,
       form.value.coverLetter,
-      userInfo.value.id
+      user_id
     );
-    success.value = "Candidature ajoutée !";
     showConfetti();
   } catch (error) {
     console.error("Erreur lors de la mise à jour du CV :", error);
-    // Gérer l'erreur de manière appropriée
   }
 }
 
@@ -63,6 +60,7 @@ async function logout() {
   <div class="mt-5 text-center">
     <h1>{{ userInfo.name }}</h1>
     <p>{{ userInfo.email }}</p>
+
   </div>
 
   <div class="col-9 position-absolute top-50 start-50 translate-middle">

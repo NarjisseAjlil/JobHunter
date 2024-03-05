@@ -4,11 +4,11 @@ import instance from "./api.js";
 
 class CV {
 
-  async create(cv, coverLetter, userId) {
+  async create(cv, coverLetter, user_id) {
     const response = await instance.post(`/cv/`, {
       cv: cv,
       coverLetter: coverLetter,
-      userId: userId,  
+      user_id,
     });
     return response.data;
   }

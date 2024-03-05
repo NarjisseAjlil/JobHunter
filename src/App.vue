@@ -49,16 +49,6 @@ import { computed } from "vue";
                   ></a
                 >
               </li>
-
-              <li class="nav-item">
-                <a class="nav-link"
-                  ><RouterLink
-                    class="text-decoration-none text-white"
-                    to="/about"
-                    >About</RouterLink
-                  ></a
-                >
-              </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">
                   <RouterLink
