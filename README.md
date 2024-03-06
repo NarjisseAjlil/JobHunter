@@ -1,30 +1,13 @@
 # jobhunter
 
-This template should help get you started developing with Vue 3 in Vite.
+- Commentaires sur le projet :
 
-## Recommended IDE Setup
+- DIfficultés rencontrées : Problème de compréhension du projet, perte de temps sur une base de données commune le fait qu'on ai du ajuster et modifier plusieurs fois la base de données, système de gestion de base de données inconnu, pas de temps de veille sur la base de données, format du rendu non compréhensible.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+- Ce qu'on a pas pu faire et pourquoi :
 
-## Customize configuration
+  Le multi select a cause de la base de données
+  Envoi des fichiers et images : Problème avec la base de données
+  Conversion des fichiers en url : Manque de temps pour la veille
+  Liens entre les tables : Manque de temps 
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-# JobHunter
