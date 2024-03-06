@@ -51,16 +51,14 @@ function showConfetti() {
   });
 }
 
-function handleFileUpload(event) {
-  // Votre fonction de gestion de téléchargement de fichier
-}
+function handleFileUpload(event) {}
 </script>
 
 <template>
   <div class="col-9 position-absolute top-50 start-50 translate-middle">
     <div v-if="!success">
       <h1>Ajouter une candidature</h1>
-      <!-- create a new application -->
+      <!-- Create a new application -->
 
       <div class="mb-3">
         <label for="title" class="form-label">Titre</label>
@@ -149,7 +147,11 @@ function handleFileUpload(event) {
 
         <div class="d-flex flex-grow-1 mx-2">
           <button class="btn btn-outline-success w-100">
-            Retour au dashboard
+            <RouterLink
+              class="text-decoration-none text-success"
+              to="/applications"
+              >Retour au candidatures</RouterLink
+            >
           </button>
         </div>
       </div>

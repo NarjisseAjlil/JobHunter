@@ -12,10 +12,10 @@ let form = ref({
 let error = ref(null);
 let success = ref(null);
 
-import router from '@/router'; 
+import router from "@/router";
 
 function redirectToAnotherPage() {
-  router.push( '/login');
+  router.push("/login");
 }
 
 async function createAccount() {
@@ -39,47 +39,50 @@ async function createAccount() {
 
   redirectToAnotherPage(); // Redirect only after the user clicks the "Create" button
 }
-
 </script>
 
 <template>
-    <p class="h3 mt-5 mb-3 text-center text-success">JobHunter</p>
-    <h1 class="text-center">Create an Account</h1>
+  <p class="h3 mt-5 mb-3 text-center text-success">JobHunter</p>
+  <h1 class="text-center">Créer un compte</h1>
 
-    <div class="col-7 position-absolute top-50 start-50 translate-middle">
-      <p v-if="error">ERREUR !!!!!! :{{ error }}</p>
+  <div class="col-7 position-absolute top-50 start-50 translate-middle">
+    <p v-if="error">ERREUR !!!!!! :{{ error }}</p>
 
-      <div class="row mt-5 mb-3">
-        <div class="col-auto">
-          <label class="col-form-label">Name :</label>
-        </div>
-        <div class="col-auto">
-          <input type="text" class="form-control"  v-model="form.name">
-        </div>
+    <div class="row mt-5 mb-3">
+      <div class="col-auto">
+        <label class="col-form-label">Prénom :</label>
       </div>
-
-      <div class="row mb-3">
-        <div class="col-auto">
-          <label class="col-form-label">Email :</label>
-        </div>
-        <div class="col-auto">
-          <input type="text" class="form-control"  v-model="form.email">
-        </div>
+      <div class="col-auto">
+        <input type="text" class="form-control" v-model="form.name" />
       </div>
-
-      <div class="row mb-3">
-        <div class="col-auto">
-          <label class="col-form-label">Password :</label>
-        </div>
-        <div class="col-auto">
-          <input type="password"  class="form-control"  v-model="form.password">
-        </div>
-      </div>
-
-      <div class="mt-4 d-grid col-9 mx-auto">
-        <button class="btn btn-outline-success " @click="createAccount">Create</button>
-      </div>
-      <p class="mt-5 text-center">Already have you an account? <a href="/login" class="link-success">Login</a></p>
     </div>
-    
+
+    <div class="row mb-3">
+      <div class="col-auto">
+        <label class="col-form-label">Email :</label>
+      </div>
+      <div class="col-auto">
+        <input type="text" class="form-control" v-model="form.email" />
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-auto">
+        <label class="col-form-label">Mot de passe :</label>
+      </div>
+      <div class="col-auto">
+        <input type="password" class="form-control" v-model="form.password" />
+      </div>
+    </div>
+
+    <div class="mt-4 d-grid col-9 mx-auto">
+      <button class="btn btn-outline-success" @click="createAccount">
+        Créer
+      </button>
+    </div>
+    <p class="mt-5 text-center">
+      Avez-vous déjà un compte ?
+      <a href="/login" class="link-success">Connexion</a>
+    </p>
+  </div>
 </template>

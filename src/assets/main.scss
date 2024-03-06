@@ -10,7 +10,7 @@
   h3 {
     font-family: Fjalla One;
   }
-  h1{
+  h1 {
     font-size: 30px;
   }
 
@@ -183,6 +183,35 @@
     margin-right: 20px;
   }
 
+  // home card
+
+  .home-card {
+    background-color: #222232;
+    margin-left: 15px;
+    margin-top: 7%;
+    border-radius: 10px;
+    width: 25rem;
+    height: 10rem;
+    color: white;
+  }
+
+  .home-card-img-title {
+    display: flex;
+    justify-content: start;
+    align-items: flex-start;
+    padding-top: 15px;
+    margin-left: 10px;
+  }
+
+  .home-card-img-title img.img-title {
+    margin-top: 25px;
+    margin-right: 20px;
+  }
+
+  .home-card-img-title h5 {
+    margin-top: 10px;
+  }
+
   // icons
   .bi-arrow-left-short {
     color: white;
@@ -206,6 +235,6 @@
     width: 27rem;
     height: 16rem;
     color: white;
-    background-color: #8ab9f1;
+    // background-color: #8ab9f1;
   }
 }

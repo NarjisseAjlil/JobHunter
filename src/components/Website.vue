@@ -17,23 +17,43 @@ onMounted(() => {
 </script>
 
 <template>
-  <h1 class="text-center mt-5 mb-5">Nos partenaires affiliés</h1>
+  <div class="text-center all">
+    <h2 class="mt-5">Stage optimisé, suivi simplifié.</h2>
+    <div class="mt-5 d-flex justify-content-evenly">
+      <button class="btn btn-outline-success">
+        <RouterLink class="text-decoration-none text-success" to="/sign-up"
+          >Inscription</RouterLink
+        >
+      </button>
+
+      <button class="btn btn-outline-success">
+        <RouterLink class="text-decoration-none text-success" to="/login"
+          >Connexion</RouterLink
+        >
+      </button>
+    </div>
+  </div>
+
+  <h1 class="text-center mt-2">Nos partenaires affiliés</h1>
 
   <div v-for="website in websites">
-    <div class="card">
-        <div class="row g-0">
-            <div class="col-md-4">
-                <img class="img-fluid rounded-start"
-                    v-if="website.img"
-                    :src="website.img[0].signedUrl"
-                />
-            </div>
-            <div class="col-md-8">
-                <div class="card-body">
-                    <h5 class="card-title text-white">{{ website.title }}</h5>
-                </div>
-            </div>
-        </div>
+    <div class="home-card mb-4">
+      <div class="home-card-img-title">
+        <img
+          class="img-title"
+          v-if="website.img"
+          :src="website.img[0].signedUrl"
+        />
+
+        <p class="mt-2">
+          {{ website.description }}
+
+          <button class="mt-3 btn btn-outline-success"><a :href= "website.url">
+            Visiter  </a><i class="bi bi-arrow-right"></i>
+            
+          </button>
+        </p>
+      </div>
     </div>
   </div>
 </template>
