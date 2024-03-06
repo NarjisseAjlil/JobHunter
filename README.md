@@ -9,5 +9,6 @@
   Le multi select a cause de la base de données
   Envoi des fichiers et images : Problème avec la base de données
   Conversion des fichiers en url : Manque de temps pour la veille
-  Liens entre les tables : Manque de temps 
+  Liens entre les tables : Manque de temps
+  Modification et suppression : Manque de temps 
 
