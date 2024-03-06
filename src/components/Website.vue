@@ -48,8 +48,9 @@ onMounted(() => {
         <p class="mt-2">
           {{ website.description }}
 
-          <button class="mt-3 btn btn-outline-success">
-            Visiter {{ url }} <i class="bi bi-arrow-right"></i>
+          <button class="mt-3 btn btn-outline-success"><a :href= "website.url">
+            Visiter  </a><i class="bi bi-arrow-right"></i>
+            
           </button>
         </p>
       </div>
